@@ -51,6 +51,10 @@ if st.button('Predict'):
     result = model.predict(vector_input)[0]
     # 4. Display
     if result == 1:
-        st.header("This is a SPAM message")
+        with st.spinner('Please wait...'):
+            time.sleep(1)
+        st.error("This is a SPAM message!")
     else:
-        st.header("This is NOT a SPAM message")
+        with st.spinner('Please wait...'):
+            time.sleep(1)
+        st.success("This is NOT a SPAM Message!")
